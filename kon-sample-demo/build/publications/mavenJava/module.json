@@ -1,0 +1,745 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.kon.framework",
+    "module": "kon-sample-demo",
+    "version": "1.0-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.3",
+      "buildId": "ctegfe5vrnf4jfy6pc6rjbpxo4"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "mysql",
+          "module": "mysql-connector-java",
+          "version": {
+            "requires": "8.0.20"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            }
+          ]
+        },
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "1.7.30"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "com.kon.framework",
+          "module": "kon-swagger",
+          "version": {
+            "requires": "1.0.2-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "com.kon.framework",
+          "module": "kon-netty",
+          "version": {
+            "requires": "1.0.18-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "com.kon.framework",
+          "module": "kon-mybatis",
+          "version": {
+            "requires": "1.0.3-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "com.alibaba",
+          "module": "fastjson",
+          "version": {
+            "requires": "1.2.75"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "com.alibaba",
+          "module": "druid-spring-boot-starter",
+          "version": {
+            "requires": "1.2.4"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter",
+          "version": {
+            "requires": "2.3.6.RELEASE"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-web",
+          "version": {
+            "requires": "2.3.6.RELEASE"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-undertow",
+          "version": {
+            "requires": "2.3.6.RELEASE"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        }
+      ],
+      "files": []
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.version": 8,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "org.slf4j",
+          "module": "slf4j-api",
+          "version": {
+            "requires": "1.7.30"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "com.kon.framework",
+          "module": "kon-swagger",
+          "version": {
+            "requires": "1.0.2-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "com.kon.framework",
+          "module": "kon-netty",
+          "version": {
+            "requires": "1.0.18-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "com.kon.framework",
+          "module": "kon-mybatis",
+          "version": {
+            "requires": "1.0.3-SNAPSHOT"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "com.alibaba",
+          "module": "fastjson",
+          "version": {
+            "requires": "1.2.75"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "com.alibaba",
+          "module": "druid-spring-boot-starter",
+          "version": {
+            "requires": "1.2.4"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter",
+          "version": {
+            "requires": "2.3.6.RELEASE"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-web",
+          "version": {
+            "requires": "2.3.6.RELEASE"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "org.springframework.boot",
+          "module": "spring-boot-starter-undertow",
+          "version": {
+            "requires": "2.3.6.RELEASE"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.j2objc",
+              "module": "j2objc-annotations"
+            },
+            {
+              "group": "com.google.code.findbugs",
+              "module": "jsr305"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "listenablefuture"
+            },
+            {
+              "group": "com.google.errorprone",
+              "module": "error_prone_annotations"
+            },
+            {
+              "group": "com.google.guava",
+              "module": "failureaccess"
+            }
+          ]
+        },
+        {
+          "group": "mysql",
+          "module": "mysql-connector-java",
+          "version": {
+            "requires": "8.0.20"
+          },
+          "excludes": [
+            {
+              "group": "org.springframework.boot",
+              "module": "spring-boot-starter-logging"
+            },
+            {
+              "group": "com.google.protobuf",
+              "module": "protobuf-java"
+            }
+          ]
+        }
+      ],
+      "files": []
+    }
+  ]
+}

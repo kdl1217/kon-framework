@@ -1,0 +1,335 @@
+2020-12-25 10:51:06.826 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 8456 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 10:51:06.889 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 10:51:09.693 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userDao' and 'com.kon.framework.dao.UserDao' mapperInterface. Bean already defined with the same name!
+2020-12-25 10:51:09.694 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 10:51:09.695 - INFO  [           main] onfigurationClassPostProcessor : Cannot enhance @Configuration bean definition 'myBatisConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-12-25 10:51:11.149 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 10:51:11.166 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 10:51:11.167 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 10:51:11.168 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 10:51:11.365 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 10:51:11.365 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4280 ms
+2020-12-25 10:51:12.383 - INFO  [           main] c.k.f.n.s.NettyServer          : init kon netty server...
+2020-12-25 10:51:12.777 - INFO  [           main] c.k.f.n.s.NettyServer          : start kon netty server...,this port is (6666)
+2020-12-25 10:51:14.173 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 10:51:14.379 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 10:51:14.964 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 10:51:15.554 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 10:51:15.660 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 10:51:16.223 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 10.754 seconds (JVM running for 13.14)
+2020-12-25 10:52:11.498 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 17032 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 10:52:11.512 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 10:52:13.722 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userDao' and 'com.kon.framework.dao.UserDao' mapperInterface. Bean already defined with the same name!
+2020-12-25 10:52:13.723 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 10:52:13.725 - INFO  [           main] onfigurationClassPostProcessor : Cannot enhance @Configuration bean definition 'myBatisConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-12-25 10:52:15.022 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 10:52:15.036 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 10:52:15.037 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 10:52:15.037 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 10:52:15.157 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 10:52:15.157 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3582 ms
+2020-12-25 10:52:15.903 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 10:52:16.084 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 10:52:16.464 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 10:52:16.869 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 10:52:16.907 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 10:52:19.931 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 9.146 seconds (JVM running for 10.537)
+2020-12-25 10:53:02.197 - INFO  [nio-7080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-25 10:53:02.198 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-12-25 10:53:02.210 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 11 ms
+2020-12-25 10:53:56.721 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 2800 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 10:53:56.735 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 10:53:58.023 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userDao' and 'com.kon.framework.dao.UserDao' mapperInterface. Bean already defined with the same name!
+2020-12-25 10:53:58.024 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 10:53:58.025 - INFO  [           main] onfigurationClassPostProcessor : Cannot enhance @Configuration bean definition 'myBatisConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-12-25 10:53:59.264 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 10:53:59.277 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 10:53:59.278 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 10:53:59.278 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 10:53:59.398 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 10:53:59.398 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2608 ms
+2020-12-25 10:54:00.110 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 10:54:00.322 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 10:54:00.691 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 10:54:01.089 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 10:54:01.133 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 10:54:01.547 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 5.478 seconds (JVM running for 6.797)
+2020-12-25 10:56:15.336 - INFO  [nio-7080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-25 10:56:15.336 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-12-25 10:56:15.351 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 14 ms
+2020-12-25 11:22:17.890 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 16920 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 11:22:17.908 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 11:22:19.444 - WARN  [           main] o.m.l.Logger                   : Skipping MapperFactoryBean with name 'userDao' and 'com.kon.framework.dao.UserDao' mapperInterface. Bean already defined with the same name!
+2020-12-25 11:22:19.445 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 11:22:19.446 - INFO  [           main] onfigurationClassPostProcessor : Cannot enhance @Configuration bean definition 'myBatisConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-12-25 11:22:20.604 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 11:22:20.615 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 11:22:20.616 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 11:22:20.616 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 11:22:20.741 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 11:22:20.742 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2749 ms
+2020-12-25 11:22:21.416 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 11:22:21.614 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 11:22:21.932 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 11:22:22.299 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 11:22:22.342 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 11:22:25.412 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 8.31 seconds (JVM running for 9.76)
+2020-12-25 11:42:21.522 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 12920 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 11:42:21.538 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 11:42:22.931 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 11:42:22.937 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 11:42:22.937 - INFO  [           main] onfigurationClassPostProcessor : Cannot enhance @Configuration bean definition 'myBatisConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-12-25 11:42:24.043 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 11:42:24.062 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 11:42:24.063 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 11:42:24.064 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 11:42:24.186 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 11:42:24.186 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2581 ms
+2020-12-25 11:42:24.871 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 11:42:25.071 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 11:42:25.414 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 11:42:25.634 - WARN  [           main] c.s.AbstractApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is org.springframework.core.NestedIOException: Failed to parse mapping resource: 'file [F:\myproject\KonFramework\kon-sample-demo\build\resources\main\mybatis\mapper\user\UserMapper.xml]'; nested exception is org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [F:\myproject\KonFramework\kon-sample-demo\build\resources\main\mybatis\mapper\user\UserMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'com.kon.framework.bean.UserBean'.  Cause: java.lang.ClassNotFoundException: Cannot find class: com.kon.framework.bean.UserBean
+2020-12-25 11:42:25.635 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} closing ...
+2020-12-25 11:42:25.644 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} closed
+2020-12-25 11:42:25.645 - INFO  [           main] c.ExecutorConfigurationSupport : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-25 11:42:25.650 - INFO  [           main] o.a.j.l.DirectJDKLog           : Stopping service [Tomcat]
+2020-12-25 11:42:25.664 - INFO  [           main] valuationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-12-25 11:43:49.304 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 18900 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 11:43:49.324 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 11:43:50.632 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 11:43:50.637 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 11:43:50.638 - INFO  [           main] onfigurationClassPostProcessor : Cannot enhance @Configuration bean definition 'myBatisConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-12-25 11:43:51.776 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 11:43:51.789 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 11:43:51.790 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 11:43:51.791 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 11:43:51.919 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 11:43:51.920 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2496 ms
+2020-12-25 11:43:52.592 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 11:43:52.795 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 11:43:53.126 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 11:43:53.464 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 11:43:53.500 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 11:43:53.881 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 5.344 seconds (JVM running for 6.736)
+2020-12-25 11:45:11.552 - INFO  [nio-7080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-25 11:45:11.552 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-12-25 11:45:11.567 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 15 ms
+2020-12-25 11:48:10.061 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 29532 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 11:48:10.076 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 11:48:11.295 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 11:48:11.302 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 11:48:11.303 - INFO  [           main] onfigurationClassPostProcessor : Cannot enhance @Configuration bean definition 'myBatisConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-12-25 11:48:12.435 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 11:48:12.445 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 11:48:12.446 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 11:48:12.446 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 11:48:12.557 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 11:48:12.557 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2427 ms
+2020-12-25 11:48:13.221 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 11:48:13.413 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 11:48:13.731 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 11:48:14.062 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 11:48:14.100 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 11:48:14.465 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 5.044 seconds (JVM running for 6.339)
+2020-12-25 11:50:36.023 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 724 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 11:50:36.037 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 11:50:37.342 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 11:50:37.350 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 11:50:37.351 - INFO  [           main] onfigurationClassPostProcessor : Cannot enhance @Configuration bean definition 'myBatisConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-12-25 11:50:38.441 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 11:50:38.454 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 11:50:38.454 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 11:50:38.455 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 11:50:38.568 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 11:50:38.569 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2469 ms
+2020-12-25 11:50:39.241 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 11:50:39.432 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 11:50:39.773 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 11:50:40.105 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 11:50:40.141 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 11:50:40.513 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 5.143 seconds (JVM running for 6.679)
+2020-12-25 13:47:15.903 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 17344 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 13:47:15.920 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 13:47:17.182 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 13:47:17.189 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 13:47:17.191 - INFO  [           main] onfigurationClassPostProcessor : Cannot enhance @Configuration bean definition 'myBatisConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-12-25 13:47:18.328 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 13:47:18.341 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 13:47:18.342 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 13:47:18.342 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 13:47:18.457 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 13:47:18.458 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2478 ms
+2020-12-25 13:47:19.124 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 13:47:19.318 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 13:47:19.633 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 13:47:19.960 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 13:47:19.997 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 13:47:20.364 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 5.117 seconds (JVM running for 6.565)
+2020-12-25 13:47:32.221 - INFO  [nio-7080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-25 13:47:32.222 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-12-25 13:47:32.232 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 10 ms
+2020-12-25 13:48:24.323 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 19620 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 13:48:24.335 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 13:48:25.557 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 13:48:25.564 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 13:48:25.565 - INFO  [           main] onfigurationClassPostProcessor : Cannot enhance @Configuration bean definition 'myBatisConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-12-25 13:48:26.672 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 13:48:26.684 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 13:48:26.684 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 13:48:26.685 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 13:48:26.795 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 13:48:26.795 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2401 ms
+2020-12-25 13:48:27.618 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 13:48:27.811 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 13:48:28.134 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 13:48:28.448 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 13:48:28.484 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 13:48:28.867 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 5.192 seconds (JVM running for 6.525)
+2020-12-25 13:48:33.740 - INFO  [nio-7080-exec-2] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-25 13:48:33.740 - INFO  [nio-7080-exec-2] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-12-25 13:48:33.754 - INFO  [nio-7080-exec-2] o.s.w.s.FrameworkServlet       : Completed initialization in 13 ms
+2020-12-25 13:50:17.495 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 6080 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 13:50:17.508 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 13:50:18.697 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 13:50:18.705 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 13:50:18.706 - INFO  [           main] onfigurationClassPostProcessor : Cannot enhance @Configuration bean definition 'myBatisConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-12-25 13:50:19.789 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 13:50:19.802 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 13:50:19.803 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 13:50:19.803 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 13:50:19.923 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 13:50:19.924 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2351 ms
+2020-12-25 13:50:20.691 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 13:50:20.881 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 13:50:21.189 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 13:50:21.517 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 13:50:21.556 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 13:50:21.933 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 5.083 seconds (JVM running for 6.326)
+2020-12-25 13:50:40.554 - INFO  [nio-7080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-25 13:50:40.554 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-12-25 13:50:40.569 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 15 ms
+2020-12-25 13:51:13.287 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 26932 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 13:51:13.301 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 13:51:14.671 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 13:51:14.679 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 13:51:14.680 - INFO  [           main] onfigurationClassPostProcessor : Cannot enhance @Configuration bean definition 'myBatisConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-12-25 13:51:15.809 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 13:51:15.821 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 13:51:15.821 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 13:51:15.821 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 13:51:15.939 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 13:51:15.940 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2548 ms
+2020-12-25 13:51:16.632 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 13:51:16.828 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 13:51:17.143 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 13:51:17.463 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 13:51:17.498 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 13:51:21.424 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 8.772 seconds (JVM running for 10.115)
+2020-12-25 13:51:26.479 - INFO  [nio-7080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-25 13:51:26.480 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-12-25 13:51:26.490 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 10 ms
+2020-12-25 13:53:15.417 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 13304 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 13:53:15.432 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 13:53:16.711 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 13:53:16.717 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 13:53:16.717 - INFO  [           main] onfigurationClassPostProcessor : Cannot enhance @Configuration bean definition 'myBatisConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-12-25 13:53:17.871 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 13:53:17.886 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 13:53:17.887 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 13:53:17.887 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 13:53:18.017 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 13:53:18.017 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2508 ms
+2020-12-25 13:53:18.709 - INFO  [           main] c.k.f.n.s.NettyServer          : init kon netty server...
+2020-12-25 13:53:19.149 - INFO  [           main] c.k.f.n.s.NettyServer          : start kon netty server...,this port is (6666)
+2020-12-25 13:53:20.494 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 13:53:20.626 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 13:53:20.951 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 13:53:21.292 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 13:53:21.318 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 13:53:21.747 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 6.973 seconds (JVM running for 8.292)
+2020-12-25 13:53:34.264 - INFO  [nio-7080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-25 13:53:34.264 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-12-25 13:53:34.278 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 14 ms
+2020-12-25 13:57:54.193 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 25364 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 13:57:54.209 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 13:57:55.640 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 13:57:55.648 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 13:57:55.649 - INFO  [           main] onfigurationClassPostProcessor : Cannot enhance @Configuration bean definition 'myBatisConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-12-25 13:57:56.773 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 13:57:56.786 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 13:57:56.787 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 13:57:56.788 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 13:57:56.905 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 13:57:56.906 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2627 ms
+2020-12-25 13:57:57.494 - INFO  [           main] c.k.f.n.s.NettyServer          : init kon netty server...
+2020-12-25 13:57:57.703 - INFO  [           main] c.k.f.n.s.NettyServer          : start kon netty server...,this port is (6666)
+2020-12-25 13:57:58.893 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 13:57:59.012 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 13:57:59.330 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 13:57:59.654 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 13:57:59.678 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 13:58:00.121 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 6.614 seconds (JVM running for 7.866)
+2020-12-25 13:58:02.953 - INFO  [nio-7080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-25 13:58:02.954 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-12-25 13:58:02.966 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 12 ms
+2020-12-25 13:59:53.670 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 8392 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 13:59:53.683 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 13:59:54.974 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 13:59:54.983 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 13:59:54.984 - INFO  [           main] onfigurationClassPostProcessor : Cannot enhance @Configuration bean definition 'myBatisConfiguration' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2020-12-25 13:59:56.079 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 13:59:56.092 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 13:59:56.093 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 13:59:56.094 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 13:59:56.208 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 13:59:56.208 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2462 ms
+2020-12-25 13:59:56.783 - INFO  [           main] c.k.f.n.s.NettyServer          : init kon netty server...
+2020-12-25 13:59:56.986 - INFO  [           main] c.k.f.n.s.NettyServer          : start kon netty server...,this port is (6666)
+2020-12-25 13:59:58.224 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 13:59:58.352 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 13:59:58.749 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 13:59:59.089 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 13:59:59.114 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 13:59:59.518 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 6.516 seconds (JVM running for 7.9)
+2020-12-25 14:06:07.896 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 3188 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 14:06:07.909 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 14:06:09.160 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 14:06:10.273 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 14:06:10.291 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 14:06:10.292 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 14:06:10.293 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 14:06:10.437 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 14:06:10.437 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2460 ms
+2020-12-25 14:06:11.035 - INFO  [           main] c.k.f.n.s.NettyServer          : init kon netty server...
+2020-12-25 14:06:11.241 - INFO  [           main] c.k.f.n.s.NettyServer          : start kon netty server...,this port is (6666)
+2020-12-25 14:06:12.458 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 14:06:12.588 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 14:06:12.928 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 14:06:13.263 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 14:06:13.287 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 14:06:13.695 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 6.441 seconds (JVM running for 7.809)
+2020-12-25 14:06:16.273 - INFO  [nio-7080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-25 14:06:16.273 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-12-25 14:06:16.288 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 14 ms
+2020-12-25 14:11:21.876 - INFO  [           main] o.s.b.StartupInfoLogger        : Starting App on DESKTOP-Kong with PID 2160 (F:\myproject\KonFramework\kon-sample-demo\build\classes\java\main started by Kong in F:\myproject\KonFramework\kon-sample-demo)
+2020-12-25 14:11:21.888 - INFO  [           main] o.s.b.SpringApplication        : The following profiles are active: dev
+2020-12-25 14:11:23.411 - WARN  [           main] o.m.l.Logger                   : No MyBatis mapper was found in '[com.kon.framework.dao]' package. Please check your configuration.
+2020-12-25 14:11:24.538 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat initialized with port(s): 7080 (http)
+2020-12-25 14:11:24.551 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing ProtocolHandler ["http-nio-7080"]
+2020-12-25 14:11:24.552 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting service [Tomcat]
+2020-12-25 14:11:24.552 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-25 14:11:24.677 - INFO  [           main] o.a.j.l.DirectJDKLog           : Initializing Spring embedded WebApplicationContext
+2020-12-25 14:11:24.678 - INFO  [           main] letWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2726 ms
+2020-12-25 14:11:33.820 - INFO  [           main] c.k.f.n.s.NettyServer          : init kon netty server...
+2020-12-25 14:11:34.040 - INFO  [           main] c.k.f.n.s.NettyServer          : start kon netty server...,this port is (6666)
+2020-12-25 14:11:35.316 - INFO  [           main] c.ExecutorConfigurationSupport : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-25 14:11:35.450 - INFO  [           main] a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2020-12-25 14:11:35.795 - INFO  [           main] c.a.d.p.DruidDataSource        : {dataSource-1} inited
+2020-12-25 14:11:36.137 - INFO  [           main] o.a.j.l.DirectJDKLog           : Starting ProtocolHandler ["http-nio-7080"]
+2020-12-25 14:11:36.162 - INFO  [           main] o.s.b.w.e.t.TomcatWebServer    : Tomcat started on port(s): 7080 (http) with context path ''
+2020-12-25 14:11:36.554 - INFO  [           main] o.s.b.StartupInfoLogger        : Started App in 15.346 seconds (JVM running for 16.692)
+2020-12-25 14:11:40.361 - INFO  [nio-7080-exec-1] o.a.j.l.DirectJDKLog           : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-25 14:11:40.361 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Initializing Servlet 'dispatcherServlet'
+2020-12-25 14:11:40.375 - INFO  [nio-7080-exec-1] o.s.w.s.FrameworkServlet       : Completed initialization in 13 ms

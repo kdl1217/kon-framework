@@ -1,0 +1,169 @@
+buildscript {
+    ext {
+        lombokVersion = "5.2.1"
+        junitPlatformVersion = "1.2.0"
+        dependencyManagementVersion = "1.0.10.RELEASE"
+        springBootVersion = "2.3.6.RELEASE"
+    }
+
+    repositories {
+        maven { url("https://plugins.gradle.org/m2/") }
+        maven { url("http://112.124.3.139:8081/repository/public/") }
+    }
+
+    dependencies {
+        classpath "io.freefair.gradle:lombok-plugin:$lombokVersion"
+        classpath "org.junit.platform:junit-platform-gradle-plugin:$junitPlatformVersion"
+        classpath "io.spring.gradle:dependency-management-plugin:$dependencyManagementVersion"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+    }
+}
+
+allprojects {
+    group('com.kon.framework')
+    version('1.0-SNAPSHOT')
+
+    plugins.apply("java")
+    plugins.apply("io.spring.dependency-management")
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    ext {
+        publishUsername = "deployment"
+        publishPassword = "deploy123456"
+    }
+
+    repositories {
+//        maven { url "https://maven.aliyun.com/repository/public" }
+        maven { url("https://repository.incarcloud.com/content/groups/public") }
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+        }
+
+        dependencies {
+            dependencySet(group: "org.slf4j", version: "1.7.30") {
+                entry "slf4j-api"
+                entry "slf4j-simple"
+                entry "slf4j-log4j12"
+            }
+            dependency "com.kon.framework:kon-core:1.0.1-SNAPSHOT"
+            dependency "com.kon.framework:kon-swagger:1.0.4-SNAPSHOT"
+            dependency "com.kon.framework:kon-netty:1.0.18-SNAPSHOT"
+            dependency "com.kon.framework:kon-mybatis:1.0.3-SNAPSHOT"
+
+            dependency "io.netty:netty-all:4.1.56.Final"
+
+            dependency "com.google.guava:guava:30.0-jre"
+            dependency "cn.hutool:hutool-all:5.5.2"
+
+            dependency "org.apache.commons:commons-lang3:3.10"
+
+            dependency "com.alibaba:fastjson:1.2.75"
+            dependency "com.alibaba:druid-spring-boot-starter:1.2.4"
+
+            dependency "mysql:mysql-connector-java:8.0.20"
+            dependency "org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.2"
+
+            dependency "io.springfox:springfox-swagger2:2.10.5"
+            dependency "com.github.xiaoymin:knife4j-spring-boot-starter:2.0.8"
+        }
+    }
+}
+
+subprojects {
+    plugins.apply("java")
+    plugins.apply("checkstyle")
+    plugins.apply("maven-publish")
+    plugins.apply("io.freefair.lombok")
+
+    configurations {
+        /*developmentOnly*/
+        /*runtimeClasspath {
+            extendsFrom developmentOnly
+        }*/
+        all*.exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"
+    }
+
+    dependencies {
+        compile "org.slf4j:slf4j-api"
+
+        testCompile "org.junit.jupiter:junit-jupiter-api"
+        testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
+    }
+
+    compileJava {
+        options.encoding = "UTF-8"
+        options.compilerArgs << "-Xlint:unchecked"
+    }
+
+    compileTestJava {
+        options.encoding = "UTF-8"
+        options.compilerArgs << "-Xlint:unchecked"
+    }
+
+    task sourceJar(type: Jar) {
+        from sourceSets.main.java.srcDirs
+        classifier "sources"
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    task removeLombokConfig() {
+        def subProjectPath = project.projectDir
+        if (null != subProjectPath) {
+            def lombokConfigFile = new File(subProjectPath, "lombok.config")
+            if (lombokConfigFile.exists()) {
+                lombokConfigFile.delete()
+            }
+        }
+    }
+
+    /** 发布到本地MAVEN仓库使用 gradle PublishToMavenLocal
+    发布到远程MAVEN仓库使用 gradle publishMavenPublicationToMavenRepository*/
+    publishing {
+        // https://docs.gradle.org/current/dsl/org.gradle.api.publish.maven.MavenPublication.html
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+                artifact sourceJar
+                versionMapping {
+                    usage('java-api') {
+                        fromResolutionOf('runtimeClasspath')
+                    }
+                    usage('java-runtime') {
+                        fromResolutionResult()
+                    }
+                }
+            }
+        }
+        repositories {
+            if (project.version.contains("-")) {
+                // Snapshots
+                maven {
+                    url "https://repository.incarcloud.com/content/repositories/snapshots/"
+                    credentials {
+                        username publishUsername
+                        password publishPassword
+                    }
+                }
+            } else {
+                // Releases
+                maven {
+                    url "https://repository.incarcloud.com/content/repositories/releases/"
+                    credentials {
+                        username publishUsername
+                        password publishPassword
+                    }
+                }
+            }
+        }
+    }
+
+    defaultTasks "assemble"
+}

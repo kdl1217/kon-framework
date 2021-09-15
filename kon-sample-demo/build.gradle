@@ -1,0 +1,15 @@
+plugins.apply("org.springframework.boot")
+
+dependencies {
+    compile "com.kon.framework:kon-swagger:1.0.4-SNAPSHOT"
+    compile "com.kon.framework:kon-netty:1.0.18-SNAPSHOT"
+    compile "com.kon.framework:kon-mybatis:1.0.3-SNAPSHOT"
+
+    runtime "mysql:mysql-connector-java"
+
+    compile "com.alibaba:fastjson"
+    compile "com.alibaba:druid-spring-boot-starter"
+    compile "org.springframework.boot:spring-boot-starter"
+    compile "org.springframework.boot:spring-boot-starter-web"
+    compile "org.springframework.boot:spring-boot-starter-undertow"
+}

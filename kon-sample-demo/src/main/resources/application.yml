@@ -1,0 +1,100 @@
+# Tomcat settings
+server:
+  port: ${TOMCAT_PLAT_PORT:7080}
+  context-path: /
+  compression:
+    enabled: true
+  tomcat:
+    uri-encoding: UTF-8
+    basedir: ./
+  # 下面是配置undertow作为服务器的参数
+  undertow:
+    # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程
+    io-threads: 4
+    # 阻塞任务线程池, 当执行类似servlet请求阻塞操作, undertow会从这个线程池中取得线程,它的值设置取决于系统的负载
+    worker-threads: 20
+    # 以下的配置会影响buffer,这些buffer会用于服务器连接的IO操作,有点类似netty的池化内存管理
+    # 每块buffer的空间大小,越小的空间被利用越充分
+    buffer-size: 1024
+    # 是否分配的直接内存
+    direct-buffers: true
+
+
+# Logging settings
+## 使用starter log4j2省略log4j2.xml文件
+logging:
+  config: classpath:log4j2-spring.yml
+
+# Spring settings
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:test}?characterEncoding=utf8&useUnicode=true&zeroDateTimeBehavior=convertToNull&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&useSSL=false
+    username: ${MYSQL_USERNAME:root}
+    password: ${MYSQL_PASSWORD:root123456}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 5
+      max-active: 20
+      min-idle: 5
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      max-open-prepared-statements: 20
+      validation-query: SELECT 1 FROM DUAL
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      filters: stat,wall
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+
+# MyBatis settings
+mybatis:
+  check-config-location: true
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+
+kon:
+  swagger:
+    title: 测试Swagger
+    description: Swagger描述
+    basePackage: com.kon.framework
+    contactName: Kon
+    contactUrl:
+    contactEmail: dlkong@incarcloud.com
+    version: 1.0
+  netty:
+    # 启动端:默认启动TCP服务 tcp、client
+    terminal: tcp
+    # ip/域名 默认 空
+    host: tbox.zs.incarcloud.com
+    # 端口
+    port: 6666
+    # 闲置通道设置
+    idle:
+      # 读闲置时间
+      readerIdleTime: 0
+      # 写闲置时间
+      writerIdleTime: 0
+      # 全部闲置时间
+      allIdleTime: 60
+      # 时间单位
+      timeUnit: seconds
+    # 通道操作
+    option:
+      # 初始化服务端可连接队列
+      backLogCount: 204800
+      # 连接超时时间
+      connectTimeOutMs: 30000
+      # 缓冲区字节数
+      rcvBufSize: 1024
+      # 通道保持活跃
+      keepLive: true
+      # Nagle算法，组装成大的数据包进行发送
+      tcpNoDelay: true
