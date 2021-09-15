@@ -2,8 +2,8 @@ package com.kon.framework.mybatis.handler;
 
 import cn.hutool.extra.spring.SpringUtil;
 import com.kon.framework.mybatis.annotation.*;
-import com.kon.framework.mybatis.config.KonMybatisConfiguration;
 import com.kon.framework.mybatis.core.Order;
+import com.kon.framework.mybatis.properties.MybatisProperties;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.mapping.MappedStatement;
@@ -116,9 +116,9 @@ public class BaseMapperHandler<T> extends XmlMapperHandler<T>{
     private void loadingTableName() {
         KonTable konTable = this.clazz.getAnnotation(KonTable.class);
         if (null != konTable) {
-            this.tableName = KonMybatisConfiguration.KON_MYBATIS_TABLE_PREFIX + konTable.value();
+            this.tableName = MybatisProperties.KON_MYBATIS_TABLE_PREFIX + konTable.value();
         } else {
-            this.tableName = KonMybatisConfiguration.KON_MYBATIS_TABLE_PREFIX + humpToLine(this.clazz.getSimpleName());
+            this.tableName = MybatisProperties.KON_MYBATIS_TABLE_PREFIX + humpToLine(this.clazz.getSimpleName());
         }
     }
 

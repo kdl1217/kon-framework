@@ -30,9 +30,9 @@ spring:
   profiles:
     active: dev
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:127.0.0.1}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:test}?characterEncoding=utf8&useUnicode=true&zeroDateTimeBehavior=convertToNull&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&useSSL=false
+    url: jdbc:mysql://${MYSQL_HOST:kon}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:test}?characterEncoding=utf8&useUnicode=true&zeroDateTimeBehavior=convertToNull&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&useSSL=false
     username: ${MYSQL_USERNAME:root}
-    password: ${MYSQL_PASSWORD:root123456}
+    password: ${MYSQL_PASSWORD:123456}
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
@@ -61,6 +61,8 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/**/*.xml
 
 kon:
+  mybatis:
+    scanMapper: com.kon.framework.demo.dao
   swagger:
     title: 测试Swagger
     description: Swagger描述

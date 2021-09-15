@@ -1,4 +1,4 @@
-rootProject.name = 'KonFramework'
+rootProject.name = 'kon-framework'
 include 'kon-core'
 include 'kon-netty'
 include 'kon-mybatis'

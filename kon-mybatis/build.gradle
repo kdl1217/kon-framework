@@ -1,4 +1,4 @@
-project.version('1.0.4-SNAPSHOT')
+project.version('1.0.14-SNAPSHOT')
 
 dependencies {
     compile "com.kon.framework:kon-core:1.0.1-SNAPSHOT"

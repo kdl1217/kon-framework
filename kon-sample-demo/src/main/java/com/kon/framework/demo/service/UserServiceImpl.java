@@ -1,14 +1,14 @@
 package com.kon.framework.demo.service;
 
-import com.kon.framework.demo.bean.UserBean;
 import com.kon.framework.core.share.Pagination;
+import com.kon.framework.demo.bean.UserBean;
+import com.kon.framework.demo.dao.UserDao;
 import com.kon.framework.mybatis.base.BaseRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * 用户接口实现
@@ -18,6 +18,9 @@ import java.util.Map;
  */
 @Service
 public class UserServiceImpl extends BaseRepository<UserBean, Long> implements UserService  {
+
+    @Autowired
+    private UserDao userDao;
 
     @Override
     public UserBean findId(long id) {
@@ -47,13 +50,13 @@ public class UserServiceImpl extends BaseRepository<UserBean, Long> implements U
 
     @Override
     public Pagination<UserBean> findPageList(Integer pageNum, Integer pageSize) {
-        return super.findPageList(pageNum, pageSize, null);
+        return super.findPageList(pageNum, pageSize);
     }
 
     @Override
     public List<UserBean> findAll() {
-        Map<String, Object> map = new HashMap<>();
-        return super.findList(map);
+//        Map<String, Object> map = new HashMap<>();
+        return userDao.findAllUser();
     }
 
 

@@ -3,9 +3,9 @@ package com.kon.framework.mybatis.base;
 import com.kon.framework.core.init.SpringInitialize;
 import com.kon.framework.core.share.Pagination;
 import com.kon.framework.mybatis.handler.BaseMapperHandler;
+import com.kon.framework.mybatis.util.PaginationProcessor;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.ObjectUtils;
-import org.apache.ibatis.session.RowBounds;
 import org.springframework.context.event.ContextRefreshedEvent;
 
 import java.io.Serializable;
@@ -146,20 +146,11 @@ public class BaseRepository<T, S extends Serializable> extends BaseMapperHandler
         if (null == model) {
             model = super.initModel;
         }
-        Pagination<T> pagination = new Pagination<>(pageNum, pageSize);
-        Long total = sqlSession.selectOne(super.getMappedStatementId(super.FIND_COUNT_MAPPER), model);
-        pagination.setTotalData(total);
-        if (0 == total) {
-            pagination.setTotalPage(0L);
-            return pagination;
-        }
-        RowBounds rowBounds = new RowBounds((pageNum - 1) * pageSize, pageSize);
-        long totalPage = (total - 1) / pageSize + 1;
-        pagination.setTotalPage(totalPage);
-        pagination.setList(sqlSession.selectList(super.getMappedStatementId(super.FIND_LIST_MAPPER), model, rowBounds));
-        return pagination;
+        T finalModel = model;
+        return PaginationProcessor.result(pageNum, pageSize,
+                () -> sqlSession.selectOne(super.getMappedStatementId(super.FIND_COUNT_MAPPER), finalModel),
+                (b) -> sqlSession.selectList(super.getMappedStatementId(super.FIND_LIST_MAPPER), finalModel, b));
     }
-
 
     /**
      * 根据Map集合参数分页查询列表
@@ -171,17 +162,10 @@ public class BaseRepository<T, S extends Serializable> extends BaseMapperHandler
         if (ObjectUtils.isEmpty(params)) {
             params = Collections.emptyMap();
         }
-        Pagination<T> pagination = new Pagination<>(pageNum, pageSize);
-        Long total = sqlSession.selectOne(super.getMappedStatementId(super.FIND_COUNT_MAPPER), params);
-        pagination.setTotalData(total);
-        if (0 == total) {
-            pagination.setTotalPage(0L);
-            return pagination;
-        }
-        RowBounds rowBounds = new RowBounds((pageNum - 1) * pageSize, pageSize);
-        long totalPage = (total - 1) / pageSize + 1;
-        pagination.setTotalPage(totalPage);
-        pagination.setList(sqlSession.selectList(super.getMappedStatementId(super.FIND_LIST_MAPPER), params, rowBounds));
-        return pagination;
+
+        Map<String, Object> finalParams = params;
+        return PaginationProcessor.result(pageNum, pageSize,
+                () -> sqlSession.selectOne(super.getMappedStatementId(super.FIND_COUNT_MAPPER), finalParams),
+                (b) -> sqlSession.selectList(super.getMappedStatementId(super.FIND_LIST_MAPPER), finalParams, b));
     }
 }

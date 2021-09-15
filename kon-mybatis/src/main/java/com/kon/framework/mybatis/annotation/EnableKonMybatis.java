@@ -2,7 +2,7 @@ package com.kon.framework.mybatis.annotation;
 
 import com.kon.framework.core.annotation.EnableSpringAware;
 import com.kon.framework.core.annotation.EnableSpringInitializeListener;
-import com.kon.framework.mybatis.config.scan.KonMybatisScanConfiguration;
+import com.kon.framework.mybatis.config.KonMybatisScanConfiguration;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.*;
