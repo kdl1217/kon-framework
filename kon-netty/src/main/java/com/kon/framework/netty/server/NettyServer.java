@@ -11,7 +11,7 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.FixedRecvByteBufAllocator;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
  * @author Kong, created on 2020-12-23T13:42.
  * @version 1.0.0-SNAPSHOT
  */
-@Log4j2
+@Slf4j
 @Component
 public class NettyServer {
 

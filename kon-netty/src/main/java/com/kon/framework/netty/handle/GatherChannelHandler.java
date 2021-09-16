@@ -6,7 +6,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleState;
 import io.netty.handler.timeout.IdleStateEvent;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 采集通道处理器
@@ -14,7 +14,7 @@ import lombok.extern.log4j.Log4j2;
  * @author Kong, created on 2020-12-23T14:04.
  * @version 1.0.0-SNAPSHOT
  */
-@Log4j2
+@Slf4j
 @ChannelHandler.Sharable
 public class GatherChannelHandler extends ChannelInboundHandlerAdapter {
 

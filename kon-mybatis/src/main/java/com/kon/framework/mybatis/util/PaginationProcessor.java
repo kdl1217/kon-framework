@@ -35,7 +35,7 @@ public class PaginationProcessor {
      * @return  结果
      */
     public static <T> Pagination<T> result(Integer pageNum, Integer pageSize,
-                                           Supplier<Integer> totalSupplier, Supplier<List<T>> dataSupplier) {
+                                           Supplier<Long> totalSupplier, Supplier<List<T>> dataSupplier) {
         Pagination<T> pagination = new Pagination<>(pageNum, pageSize);
         long total = totalSupplier.get();
         if (total > 0) {
@@ -74,7 +74,7 @@ public class PaginationProcessor {
      * @return  结果
      */
     public static <T> Pagination<T> result(Integer pageNum, Integer pageSize,
-                                           Supplier<Integer> totalSupplier, Function<RowBounds, List<T>> dataFunction) {
+                                           Supplier<Long> totalSupplier, Function<RowBounds, List<T>> dataFunction) {
         Pagination<T> pagination = new Pagination<>(pageNum, pageSize);
         long total = totalSupplier.get();
         if (total > 0) {

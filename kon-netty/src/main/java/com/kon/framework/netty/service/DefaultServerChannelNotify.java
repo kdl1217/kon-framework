@@ -2,7 +2,7 @@ package com.kon.framework.netty.service;
 
 import cn.hutool.core.exceptions.ExceptionUtil;
 import io.netty.channel.ChannelHandlerContext;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 默认服务通道通知服务
@@ -10,7 +10,7 @@ import lombok.extern.log4j.Log4j2;
  * @author Kong, created on 2020-12-23T16:16.
  * @version 1.0.0-SNAPSHOT
  */
-@Log4j2
+@Slf4j
 public class DefaultServerChannelNotify implements ServerChannelNotify {
 
     @Override

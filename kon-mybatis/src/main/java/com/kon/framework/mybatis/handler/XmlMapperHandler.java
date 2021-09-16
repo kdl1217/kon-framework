@@ -1,6 +1,6 @@
 package com.kon.framework.mybatis.handler;
 
-import org.apache.commons.lang3.StringUtils;
+import cn.hutool.core.util.StrUtil;
 
 import java.util.Map;
 
@@ -58,7 +58,7 @@ public class XmlMapperHandler<T> {
     protected String updateXmlMapper() {
         StringBuilder paramColumns = new StringBuilder();
         this.columns.forEach((fieldName, column) -> {
-            if (!StringUtils.equals(column, this.primaryKey)) {
+            if (!StrUtil.equals(column, this.primaryKey)) {
                 paramColumns.append(updateIfCondition(column, fieldName));
             }
         });
@@ -216,9 +216,9 @@ public class XmlMapperHandler<T> {
      */
     private String addOrderBy() {
         String orderBy = "";
-        if (StringUtils.isNoneEmpty(this.ascColumn)) {
+        if (StrUtil.isNotEmpty(this.ascColumn)) {
             orderBy = " ORDER BY `" + this.ascColumn + "` ASC ";
-        } else if (StringUtils.isNoneEmpty(this.descColumn)) {
+        } else if (StrUtil.isNotEmpty(this.descColumn)) {
             orderBy = " ORDER BY `" + this.descColumn + "` DESC ";
         }
         return orderBy;

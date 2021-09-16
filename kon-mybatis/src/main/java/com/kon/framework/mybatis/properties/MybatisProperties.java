@@ -21,17 +21,6 @@ public class MybatisProperties {
 
     private String tablePrefix;
 
-    private boolean cacheEnabled = false;
-
-    private boolean lazyLoadingEnabled = false;
-
-    private boolean multipleResultSetsEnabled = true;
-
-    private boolean useColumnLabel = true;
-
-    private boolean useGeneratedKeys = false;
-
-
     public void setTablePrefix(String tablePrefix) {
         this.tablePrefix = tablePrefix;
         MybatisProperties.KON_MYBATIS_TABLE_PREFIX = tablePrefix;

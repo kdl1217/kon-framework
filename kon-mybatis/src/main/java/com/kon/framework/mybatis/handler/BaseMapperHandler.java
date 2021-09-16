@@ -1,11 +1,11 @@
 package com.kon.framework.mybatis.handler;
 
+import cn.hutool.core.util.StrUtil;
 import cn.hutool.extra.spring.SpringUtil;
 import com.kon.framework.mybatis.annotation.*;
 import com.kon.framework.mybatis.core.Order;
 import com.kon.framework.mybatis.properties.MybatisProperties;
-import lombok.extern.log4j.Log4j2;
-import org.apache.commons.lang3.StringUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.ResultMap;
 import org.apache.ibatis.mapping.SqlCommandType;
@@ -26,7 +26,7 @@ import java.util.HashMap;
  * @author Kong, created on 2020-12-18T10:07.
  * @version 1.0.0-SNAPSHOT
  */
-@Log4j2
+@Slf4j
 public class BaseMapperHandler<T> extends XmlMapperHandler<T>{
 
     /**
@@ -149,7 +149,7 @@ public class BaseMapperHandler<T> extends XmlMapperHandler<T>{
         KonColumn konColumn = field.getAnnotation(KonColumn.class);
         if (null != konColumn) {
             String column = konColumn.value();
-            column = StringUtils.isEmpty(column) ? humpToLine(field.getName()) :  column;
+            column = StrUtil.isEmpty(column) ? humpToLine(field.getName()) :  column;
             this.columns.put(field.getName(), column);
         } else {
             this.columns.put(field.getName(), humpToLine(field.getName()));

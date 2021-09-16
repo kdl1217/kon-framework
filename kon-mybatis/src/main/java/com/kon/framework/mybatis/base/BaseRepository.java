@@ -1,11 +1,11 @@
 package com.kon.framework.mybatis.base;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.kon.framework.core.init.SpringInitialize;
 import com.kon.framework.core.share.Pagination;
 import com.kon.framework.mybatis.handler.BaseMapperHandler;
 import com.kon.framework.mybatis.util.PaginationProcessor;
-import lombok.extern.log4j.Log4j2;
-import org.apache.commons.lang3.ObjectUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.event.ContextRefreshedEvent;
 
 import java.io.Serializable;
@@ -19,7 +19,7 @@ import java.util.Map;
  * @author Kong, created on 2020-12-16T17:52.
  * @version 1.0.0-SNAPSHOT
  */
-@Log4j2
+@Slf4j
 public class BaseRepository<T, S extends Serializable> extends BaseMapperHandler<T> implements SpringInitialize {
 
     @Override
@@ -43,7 +43,7 @@ public class BaseRepository<T, S extends Serializable> extends BaseMapperHandler
      * @return 对象
      */
     public T findOne(T model) {
-        if (ObjectUtils.isEmpty(model)) {
+        if (ObjectUtil.isEmpty(model)) {
             throw new NullPointerException("model param is null, please input param!!!");
         }
         return this.sqlSession.selectOne(super.getMappedStatementId(super.FIND_ONE_MAPPER), model);
@@ -55,7 +55,7 @@ public class BaseRepository<T, S extends Serializable> extends BaseMapperHandler
      * @return  对象
      */
     public T findOne(Map<String, Object> params) {
-        if (ObjectUtils.isEmpty(params)) {
+        if (ObjectUtil.isEmpty(params)) {
             throw new NullPointerException("map params is null, please input param!!!");
         }
         return this.sqlSession.selectOne(super.getMappedStatementId(super.FIND_ONE_MAPPER), params);
@@ -67,7 +67,7 @@ public class BaseRepository<T, S extends Serializable> extends BaseMapperHandler
      * @return  操作数量
      */
     public int save(T model) {
-        if (ObjectUtils.isEmpty(model)) {
+        if (ObjectUtil.isEmpty(model)) {
             throw new NullPointerException("model params is null, please input param!!!");
         }
         return sqlSession.insert(super.getMappedStatementId(super.SAVE_MAPPER), model);
@@ -79,7 +79,7 @@ public class BaseRepository<T, S extends Serializable> extends BaseMapperHandler
      * @return 操作数量
      */
     public int update(T model) {
-        if (ObjectUtils.isEmpty(model)) {
+        if (ObjectUtil.isEmpty(model)) {
             throw new NullPointerException("model params is null, please input param!!!");
         }
         return sqlSession.update(super.getMappedStatementId(super.UPDATE_MAPPER), model);
@@ -108,7 +108,7 @@ public class BaseRepository<T, S extends Serializable> extends BaseMapperHandler
      * @return 对象集合
      */
     public List<T> findList(Map<String, Object> params) {
-        if (ObjectUtils.isEmpty(params)) {
+        if (ObjectUtil.isEmpty(params)) {
             params = Collections.emptyMap();
         }
         return sqlSession.selectList(super.getMappedStatementId(super.FIND_LIST_MAPPER), params);
@@ -159,7 +159,7 @@ public class BaseRepository<T, S extends Serializable> extends BaseMapperHandler
      * @return  分页对象
      */
     public Pagination<T> findPageList(Integer pageNum, Integer pageSize, Map<String, Object> params) {
-        if (ObjectUtils.isEmpty(params)) {
+        if (ObjectUtil.isEmpty(params)) {
             params = Collections.emptyMap();
         }
 

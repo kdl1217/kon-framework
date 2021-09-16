@@ -7,7 +7,7 @@ import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -18,7 +18,7 @@ import org.springframework.util.StringUtils;
  * @author Kong, created on 2020-12-23T15:33.
  * @version 1.0.0-SNAPSHOT
  */
-@Log4j2
+@Slf4j
 @Component
 public class NettyClient {
 

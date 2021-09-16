@@ -1,7 +1,7 @@
 package com.kon.framework.netty.run;
 
 import com.kon.framework.netty.server.NettyServer;
-import lombok.extern.log4j.Log4j2;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @author Kong, created on 2020-12-24T14:20.
  * @version 1.0.0-SNAPSHOT
  */
-@Log4j2
+@Slf4j
 @Configuration
 @ConditionalOnProperty(prefix = "kon.netty", name = "terminal", havingValue = "tcp")
 public class KonNettyServerStart {

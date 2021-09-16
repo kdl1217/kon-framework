@@ -1,6 +1,6 @@
-project.version('1.0.18-SNAPSHOT')
+project.version('1.0.0-SNAPSHOT')
 
 dependencies {
-    compile "com.kon.framework:kon-core:1.0.1-SNAPSHOT"
+    compile project(":kon-core")
     compile "io.netty:netty-all"
 }

@@ -1,7 +1,7 @@
 package com.kon.framework.mybatis.plugin;
 
-import lombok.extern.log4j.Log4j2;
-import org.apache.commons.lang3.StringUtils;
+import cn.hutool.core.util.StrUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.cache.CacheKey;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.BoundSql;
@@ -21,7 +21,7 @@ import java.util.Properties;
  * @author Kong, created on 2020-12-15T11:59.
  * @version 1.0.0-SNAPSHOT
  */
-@Log4j2
+@Slf4j
 @Intercepts({
         @Signature(type = Executor.class, method = "query", args = {MappedStatement.class, Object.class,
                 RowBounds.class, ResultHandler.class}),
@@ -39,7 +39,7 @@ public class PaginationInterceptor implements Interceptor {
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
-        if (StringUtils.isBlank(dialect)) {
+        if (StrUtil.isEmpty(dialect)) {
             throw new Exception("null dialect");
         }
 
@@ -54,7 +54,7 @@ public class PaginationInterceptor implements Interceptor {
         String sqlId = ms.getId();
         BoundSql boundSql = ms.getBoundSql(queryParameter);
         String querySql = boundSql.getSql();
-        if (StringUtils.isBlank(querySql)) {
+        if (StrUtil.isEmpty(querySql)) {
             log.info("the sql whose id is {} is blank!", sqlId);
             throw new NullPointerException("the sql whose id is  " + sqlId + " is blank!");
         }

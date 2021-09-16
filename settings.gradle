@@ -3,5 +3,4 @@ include 'kon-core'
 include 'kon-netty'
 include 'kon-mybatis'
 include 'kon-swagger'
-include 'kon-sample-demo'
 
