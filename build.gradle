@@ -15,7 +15,7 @@ allprojects {
 
     ext {
         publishUsername = "deployment"
-        publishPassword = "deploy123456"
+        publishPassword = "deploy"
     }
 
     repositories {
