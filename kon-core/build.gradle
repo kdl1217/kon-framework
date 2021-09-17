@@ -1,0 +1,17 @@
+project.version('1.0.0-SNAPSHOT')
+
+dependencies {
+    compile "com.google.guava:guava"
+    compile "cn.hutool:hutool-all"
+
+    compile "org.springframework.boot:spring-boot-autoconfigure"
+
+    configurations.all {
+        exclude group: "com.google.code.findbugs", module:"jsr305"
+        exclude group: "com.google.errorprone", module:"error_prone_annotations"
+        exclude group: "com.google.guava", module:"failureaccess"
+        exclude group: "com.google.guava", module:"listenablefuture"
+        exclude group: "com.google.j2objc", module:"j2objc-annotations"
+    }
+}
+

@@ -1,0 +1,7 @@
+project.version('1.0.0-SNAPSHOT')
+
+dependencies {
+    compile project(":kon-core")
+
+    compile "org.mybatis.spring.boot:mybatis-spring-boot-starter"
+}

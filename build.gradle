@@ -1,0 +1,150 @@
+buildscript {
+    apply from: 'config.gradle'
+}
+
+plugins {
+    id 'java'
+    id 'io.freefair.lombok' version "$lombokVersion" apply false
+    id 'io.spring.dependency-management' version "$dependencyVersion" apply false
+    id 'org.springframework.boot' version "$springBootVersion" apply false
+}
+
+allprojects {
+    group = 'com.kon.framework'
+    version = '1.0-SNAPSHOT'
+
+    ext {
+        publishUsername = "deployment"
+        publishPassword = "deploy"
+    }
+
+    repositories {
+        maven { url "https://maven.aliyun.com/repository/public" }
+        maven { url("https://repository.incarcloud.com/content/groups/public") }
+    }
+}
+
+subprojects {
+    plugins.apply("java")
+    plugins.apply("checkstyle")
+    plugins.apply("maven-publish")
+    plugins.apply("io.freefair.lombok")
+    plugins.apply("io.spring.dependency-management")
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    configurations {
+//        developmentOnly
+//        runtimeClasspath {
+//            extendsFrom developmentOnly
+//        }
+        all*.exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+        }
+
+        dependencies {
+            dependencySet(group: "org.slf4j", version: "$slf4jVersion") {
+                entry "slf4j-api"
+                entry "slf4j-simple"
+                entry "slf4j-log4j12"
+            }
+
+            dependency "io.netty:netty-all:$nettyVersion"
+
+            dependency "com.google.guava:guava:$guavaVersion"
+            dependency "cn.hutool:hutool-all:$hutoolVersion"
+
+            dependency "com.alibaba:druid-spring-boot-starter:$druidVersion"
+
+            dependency "mysql:mysql-connector-java:$mysqlConnectionVersion"
+            dependency "org.mybatis.spring.boot:mybatis-spring-boot-starter:$mybatisVersion"
+
+            dependency "io.springfox:springfox-swagger2:$swaggerVersion"
+            dependency "com.github.xiaoymin:knife4j-spring-boot-starter:$knife4jVersion"
+        }
+    }
+
+    dependencies {
+        compile "org.slf4j:slf4j-api"
+
+        testCompile "org.junit.jupiter:junit-jupiter-api"
+        testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine"
+    }
+
+    compileJava {
+        options.encoding = "UTF-8"
+        options.compilerArgs << "-Xlint:unchecked"
+    }
+
+    compileTestJava {
+        options.encoding = "UTF-8"
+        options.compilerArgs << "-Xlint:unchecked"
+    }
+
+    task sourceJar(type: Jar) {
+        from sourceSets.main.java.srcDirs
+        classifier "sources"
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    task removeLombokConfig() {
+        def subProjectPath = project.projectDir
+        if (null != subProjectPath) {
+            def lombokConfigFile = new File(subProjectPath, "lombok.config")
+            if (lombokConfigFile.exists()) {
+                lombokConfigFile.delete()
+            }
+        }
+    }
+
+    /** 发布到本地MAVEN仓库使用 gradle PublishToMavenLocal
+    发布到远程MAVEN仓库使用 gradle publishMavenPublicationToMavenRepository*/
+    publishing {
+        // https://docs.gradle.org/current/dsl/org.gradle.api.publish.maven.MavenPublication.html
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+                artifact sourceJar
+                versionMapping {
+                    usage('java-api') {
+                        fromResolutionOf('runtimeClasspath')
+                    }
+                    usage('java-runtime') {
+                        fromResolutionResult()
+                    }
+                }
+            }
+        }
+        repositories {
+            if (project.version.contains("-")) {
+                // Snapshots
+                maven {
+                    url "https://repository.incarcloud.com/content/repositories/snapshots/"
+                    credentials {
+                        username publishUsername
+                        password publishPassword
+                    }
+                }
+            } else {
+                // Releases
+                maven {
+                    url "https://repository.incarcloud.com/content/repositories/releases/"
+                    credentials {
+                        username publishUsername
+                        password publishPassword
+                    }
+                }
+            }
+        }
+    }
+
+    defaultTasks "assemble"
+}
