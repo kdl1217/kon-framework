@@ -35,7 +35,10 @@ public class PaginationInterceptor implements Interceptor {
 
     private static final String DB2 = "db2";
 
-    private String dialect = "";
+    /**
+     * 默认MySQl
+     */
+    private String dialect = MYSQL;
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {

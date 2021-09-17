@@ -1,7 +1,5 @@
 package com.kon.framework.mybatis.annotation;
 
-import org.springframework.core.annotation.AliasFor;
-
 import java.lang.annotation.*;
 
 /**
@@ -15,8 +13,5 @@ import java.lang.annotation.*;
 @Documented
 public @interface KonTable {
 
-    String name() default "";
-
-    @AliasFor("name")
-    String value() default "";
+    String value();
 }

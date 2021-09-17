@@ -27,6 +27,7 @@ Service extends BaseRepository<XXXBean, Long>
 @DisableColumn
 
 # 列名， 不添加注解，默认的列表以下划线的形式查询
+# 可以指定在单个或者列表中的查询条件 conditions @Conditions
 @KonColumn
 
 # 排序，目前只支持一个属性，以最后一个为主
@@ -43,5 +44,8 @@ Service extends BaseRepository<XXXBean, Long>
 ````yaml
 kon:
   mybatis:
+    # 全局的表前缀，表名 t_ + entity驼峰名称 eg:（t_vehicle_type）
     tablePrefix: t_
+    # 指定方言，默认mysql
+    dialect: mysql
 ````

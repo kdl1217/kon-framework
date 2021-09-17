@@ -19,7 +19,14 @@ public class MybatisProperties {
 
     public static String KON_MYBATIS_TABLE_PREFIX = "";
 
+    /**
+     * 表名前缀
+     */
     private String tablePrefix;
+    /**
+     * 方言
+     */
+    private String dialect;
 
     public void setTablePrefix(String tablePrefix) {
         this.tablePrefix = tablePrefix;

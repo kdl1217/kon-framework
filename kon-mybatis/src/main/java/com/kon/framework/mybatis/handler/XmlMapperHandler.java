@@ -1,6 +1,9 @@
 package com.kon.framework.mybatis.handler;
 
 import cn.hutool.core.util.StrUtil;
+import com.kon.framework.mybatis.annotation.Conditions;
+import com.kon.framework.mybatis.core.Condition;
+import com.kon.framework.mybatis.core.Group;
 
 import java.util.Map;
 
@@ -28,6 +31,11 @@ public class XmlMapperHandler<T> {
      * columns key -> field , value -> column
      */
     protected Map<String, String> columns;
+    /**
+     * 条件
+     */
+    protected Map<String, Conditions[]> conditionMap;
+
     /**
      * 正序列，默认null
      */
@@ -86,7 +94,7 @@ public class XmlMapperHandler<T> {
      * @return findOne XMLMapper
      */
     protected String selectOneMapper() {
-        return "SELECT " + baseColumn() +" FROM " + this.tableName + whereCondition();
+        return "SELECT " + baseColumn() +" FROM " + this.tableName + whereCondition(Group.ONE);
     }
 
     /**
@@ -94,7 +102,7 @@ public class XmlMapperHandler<T> {
      * @return findCount XMLMapper
      */
     protected String selectCountMapper() {
-        return "SELECT COUNT(1) FROM " + this.tableName + whereCondition();
+        return "SELECT COUNT(1) FROM " + this.tableName + whereCondition(Group.LIST);
     }
 
     /**
@@ -102,7 +110,7 @@ public class XmlMapperHandler<T> {
      * @return findList XMLMapper
      */
     protected String selectList() {
-        return "SELECT " + baseColumn() +" FROM " + this.tableName + whereCondition() + addOrderBy();
+        return "SELECT " + baseColumn() +" FROM " + this.tableName + whereCondition(Group.LIST) + addOrderBy();
     }
 
     /**
@@ -115,6 +123,71 @@ public class XmlMapperHandler<T> {
             columnBuilder.append("`").append(column).append("`").append(",");
         }
         return columnBuilder.deleteCharAt(columnBuilder.length() - 1).toString();
+    }
+
+    /**
+     * where条件
+     * @return  拼接where 条件 eg: <where> <if test="null != fieldName "> AND `column` = #{fieldName} </if> ... </where>\n
+     */
+    private String whereCondition(Group group) {
+        StringBuilder paramColumns = new StringBuilder();
+        this.columns.forEach((fieldName, column) -> {
+            Conditions[] conditions = this.conditionMap.get(fieldName);
+            // 获取当前属性条件
+            Condition condition = getCondition(group, conditions);
+            // 添加条件
+            paramColumns.append(conditionParam(fieldName, column, condition));
+        });
+        return addWhere(paramColumns.toString());
+    }
+
+    /**
+     * 获取当前属性条件
+     * @param group 组
+     * @param conditions    条件
+     * @return 条件
+     */
+    private Condition getCondition(Group group, Conditions[] conditions) {
+        Condition condition = Condition.EQUAL;
+        if (null != conditions) {
+            for (Conditions value : conditions) {
+                if (group == value.group()) {
+                    condition = value.condition();
+                }
+            }
+        }
+        return condition;
+    }
+
+    /**
+     * 条件参数
+     * @param fieldName 字段名
+     * @param column    列名
+     * @param condition 条件
+     * @return  添加条件
+     */
+    private String conditionParam(String fieldName, String column, Condition condition) {
+        String param;
+        switch (condition) {
+            case LIKE:
+                param = likeCondition(column, fieldName);
+                break;
+            case LT:
+                param = ltCondition(column, fieldName);
+                break;
+            case LE:
+                param = leCondition(column, fieldName);
+                break;
+            case GT:
+                param = gtCondition(column, fieldName);
+                break;
+            case GE:
+                param = geCondition(column, fieldName);
+                break;
+            default:
+                param = equalCondition(column, fieldName);
+        }
+        return param;
     }
 
     /**
@@ -191,23 +264,64 @@ public class XmlMapperHandler<T> {
     }
 
     /**
-     * 添加where if 条件
+     * 添加 等于 条件
      * @param column        列名
      * @param fieldName     属性名
      * @return 拼接 where if 条件  eg: <if test="null != fieldName "> AND `column` = #{fieldName} </if>\n
      */
-    private String addWhereIfCondition(String column, String fieldName) {
+    private String equalCondition(String column, String fieldName) {
         return " <if test=\"null != " + fieldName + "\"> AND `" + column + "` = #{" + fieldName + "} </if>\n ";
     }
 
     /**
-     * where条件
-     * @return  拼接where 条件 eg: <where> <if test="null != fieldName "> AND `column` = #{fieldName} </if> ... </where>\n
+     * 添加 LIKE 条件
+     * @param column        列名
+     * @param fieldName     属性名
+     * @return 拼接 where if 条件  eg: <if test="null != fieldName "> AND `column` like #{fieldName} </if>\n
      */
-    private String whereCondition() {
-        StringBuilder paramColumns = new StringBuilder();
-        this.columns.forEach((fieldName, column) -> paramColumns.append(addWhereIfCondition(column, fieldName)));
-        return addWhere(paramColumns.toString());
+    private String likeCondition(String column, String fieldName) {
+        return " <if test=\"null != " + fieldName + "\"> AND `" + column + "` like CONCAT(CONVERT('%', CHAR), " +
+                "CONVERT(#{" + fieldName + "}, CHAR), CONVERT('%', CHAR)) </if>\n ";
+    }
+
+    /**
+     * 添加 小于 条件
+     * @param column        列名
+     * @param fieldName     属性名
+     * @return 拼接 where if 条件  eg: <if test="null != fieldName "> AND `column` < #{fieldName} </if>\n
+     */
+    private String ltCondition(String column, String fieldName) {
+        return " <if test=\"null != " + fieldName + "\"> AND `" + column + "` <![CDATA[ < ]]> #{" + fieldName + "} </if>\n ";
+    }
+
+    /**
+     * 添加 小于等于 条件
+     * @param column        列名
+     * @param fieldName     属性名
+     * @return 拼接 where if 条件  eg: <if test="null != fieldName "> AND `column` <= #{fieldName} </if>\n
+     */
+    private String leCondition(String column, String fieldName) {
+        return " <if test=\"null != " + fieldName + "\"> AND `" + column + "` <![CDATA[ <= ]]> #{" + fieldName + "} </if>\n ";
+    }
+
+    /**
+     * 添加 大于 条件
+     * @param column        列名
+     * @param fieldName     属性名
+     * @return 拼接 where if 条件  eg: <if test="null != fieldName "> AND `column` > #{fieldName} </if>\n
+     */
+    private String gtCondition(String column, String fieldName) {
+        return " <if test=\"null != " + fieldName + "\"> AND `" + column + "` <![CDATA[ > ]]> #{" + fieldName + "} </if>\n ";
+    }
+
+    /**
+     * 添加 大于等于 条件
+     * @param column        列名
+     * @param fieldName     属性名
+     * @return 拼接 where if 条件  eg: <if test="null != fieldName "> AND `column` >= #{fieldName} </if>\n
+     */
+    private String geCondition(String column, String fieldName) {
+        return " <if test=\"null != " + fieldName + "\"> AND `" + column + "` <![CDATA[ >= ]]> #{" + fieldName + "} </if>\n ";
     }
 
     /**

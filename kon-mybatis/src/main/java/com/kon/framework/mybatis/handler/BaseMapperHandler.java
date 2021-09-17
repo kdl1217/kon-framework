@@ -19,6 +19,8 @@ import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 基础MapperHandler
@@ -116,7 +118,7 @@ public class BaseMapperHandler<T> extends XmlMapperHandler<T>{
     private void loadingTableName() {
         KonTable konTable = this.clazz.getAnnotation(KonTable.class);
         if (null != konTable) {
-            this.tableName = MybatisProperties.KON_MYBATIS_TABLE_PREFIX + konTable.value();
+            this.tableName = konTable.value();
         } else {
             this.tableName = MybatisProperties.KON_MYBATIS_TABLE_PREFIX + humpToLine(this.clazz.getSimpleName());
         }
@@ -128,6 +130,7 @@ public class BaseMapperHandler<T> extends XmlMapperHandler<T>{
     private void loadingColumns() {
         Field[] fields = this.clazz.getDeclaredFields();
         this.columns = new HashMap<>(fields.length);
+        this.conditionMap = new HashMap<>(fields.length);
         for (Field field : fields) {
             DisableColumn disableColumn = field.getAnnotation(DisableColumn.class);
             if (null == disableColumn) {
@@ -149,8 +152,10 @@ public class BaseMapperHandler<T> extends XmlMapperHandler<T>{
         KonColumn konColumn = field.getAnnotation(KonColumn.class);
         if (null != konColumn) {
             String column = konColumn.value();
-            column = StrUtil.isEmpty(column) ? humpToLine(field.getName()) :  column;
+            column = StrUtil.isEmpty(column) ? humpToLine(field.getName()) : column;
             this.columns.put(field.getName(), column);
+            // 条件
+            this.conditionMap.put(field.getName(), konColumn.conditions());
         } else {
             this.columns.put(field.getName(), humpToLine(field.getName()));
         }
@@ -182,13 +187,24 @@ public class BaseMapperHandler<T> extends XmlMapperHandler<T>{
         }
     }
 
+    private static final Pattern HUMP_PATTERN = Pattern.compile("[A-Z]");
     /**
      * 大写转下划线 eg: tableName -> table_name
      * @param str   转换字符
      * @return  带下划线字符
      */
     private String humpToLine(String str) {
-        return str.replaceAll("[A-Z]", "_$0").toLowerCase();
+        StringBuffer sb = new StringBuffer();
+        if (str.length() > 1) {
+            sb.append(str.charAt(0));
+            str = str.substring(1);
+            Matcher matcher = HUMP_PATTERN.matcher(str);
+            while (matcher.find()) {
+                matcher.appendReplacement(sb, "_" + matcher.group(0).toLowerCase());
+            }
+            matcher.appendTail(sb);
+        }
+        return sb.toString().toLowerCase();
     }
 
     /**

@@ -1,7 +1,5 @@
 package com.kon.framework.mybatis.annotation;
 
-import org.springframework.core.annotation.AliasFor;
-
 import java.lang.annotation.*;
 
 /**
@@ -16,8 +14,15 @@ import java.lang.annotation.*;
 @Documented
 public @interface KonColumn {
 
-    String name() default "";
-
-    @AliasFor("name")
+    /**
+     * 列名，默认是 驼峰格式
+     * @return 列名
+     */
     String value() default "";
+
+    /**
+     * 条件
+     * @return Conditions
+     */
+    Conditions[] conditions() default @Conditions;
 }

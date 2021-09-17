@@ -1,4 +1,4 @@
-project.version('1.0.0-SNAPSHOT')
+project.version('1.0.7-SNAPSHOT')
 
 dependencies {
     compile project(":kon-core")
